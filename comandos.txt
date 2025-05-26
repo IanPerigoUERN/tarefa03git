@@ -1,0 +1,25 @@
+mkdir tarefa-git
+cd tarefa-git
+git init
+echo "Arquivo 1 da tarefa de git" > arquivo1.txt
+echo "Arquivo 2 da tarefa de git" > arquivo2.txt
+echo "Arquivo 3 da tarefa de git" > arquivo3.txt
+git add .
+git commit -m "Primeiro commit dos 3 arquivos de texto"
+echo "alterando arquivo 1 da tarefa de git" > arquivo1.txt
+echo "alterando arquivo 2 da tarefa de git" > arquivo2.txt
+git status
+git diff
+git add arquivo1.txt arquivo2.txt
+git commit -m "alterando arquivo 1 e 2"
+git log
+git log --oneline
+git log --graph --oneline --all
+git revert HEAD --no-edit
+echo "Modificando o arquivo 3 temporariamente" > arquivo3.txt
+git add arquivo3.txt # Adicionado: Você precisaria adicionar antes do stash, ou usar -u/-a
+git stash
+git checkout -b nova-branch
+git stash pop
+git reflog
+git tag -a v1.0 8260d78663a7ba6a6610fffc26f2eaef81f56127 -m "Versão estável com tag"
